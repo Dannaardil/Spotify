@@ -220,6 +220,8 @@ main{
    margin-top: 0.5rem;
    margin-bottom: 0.5rem;
    justify-content: center;
+
+
 }
 
 .main__heading{
@@ -231,8 +233,9 @@ main{
     justify-content: center;
     align-items: center;
 
-    width: 600px;
-    height: 700px;
+   width: 100vw;
+ 
+   
 }
 
 
@@ -421,8 +424,12 @@ img:hover{
         grid-template-columns: 1fr;
         overflow-y: scroll;
         
+        
 
         
+    }
+    .album{
+        width: 100vw;
     }
 
 
@@ -574,7 +581,7 @@ img:hover{
         main{
             display: flex;
           margin-left: 0.5rem;
-            width:fit-content;
+          width: 95vw;
             gap:0rem;
             padding: 1rem;
 
@@ -594,7 +601,7 @@ img:hover{
         .frame__box{
          
            display:  flex;
-           width: 350px;
+           width: 100vw;
            height: 560px;
            padding: 0rem;
            
@@ -608,6 +615,7 @@ img:hover{
             gap: 1rem;
             align-items: center;
             padding-bottom: 1.5rem;
+          
         
         
         }
@@ -627,11 +635,15 @@ img:hover{
 
 
         /* SECTION DE TRACK TODAS LAS CANCIONES */
+        .track{
+            padding-bottom: 1rem;
+        }
         .track__search{
             display: flex;
             gap: 1rem;
             align-items: center;
             padding-left: 2rem;
+           
             
           
         }
