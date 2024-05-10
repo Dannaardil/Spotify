@@ -7,8 +7,10 @@ class myframe extends HTMLElement{
     }
     connectedCallback(){
         this.shadowRoot.innerHTML = /*html*/`
-            <iframe class="spotify-iframe" width="700" height="780" src="https://open.spotify.com/embed/album/${this.id}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe class="spotify-iframe" width="350" height="500" src="https://open.spotify.com/embed/album/${this.id}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+           
         `
+        
     }
     static get observedAttributes(){
         return ["uri"];
