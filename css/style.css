@@ -420,6 +420,7 @@ img:hover{
         display: grid;
         grid-template-columns: 1fr;
         overflow-y: scroll;
+        
 
         
     }
@@ -573,8 +574,9 @@ img:hover{
         main{
             display: flex;
           margin-left: 0.5rem;
-            width: 23.3rem;
+            width:fit-content;
             gap:0rem;
+            padding: 1rem;
 
         }
       
