@@ -44,7 +44,7 @@ body{
 
 }
 .album__discover h1{
-    font-size: xx-large;
+    font-size: xx-large;    
     color: var(--color3)
 }
 .album__search{
@@ -219,13 +219,21 @@ main{
    border-radius: 1rem;
    margin-top: 0.5rem;
    margin-bottom: 0.5rem;
+   justify-content: center;
 }
 
 .main__heading{
     padding-top: 2rem;
     font-size: larger;
 }
+.frame__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    width: 600px;
+    height: 700px;
+}
 
 
 .album__mainSearch{
@@ -403,5 +411,247 @@ main{
 img:hover{
     cursor: pointer;
    
+
+}
+/* RESPONSIVE  */
+@media (max-width: 800px) {
+    /* TITULO DE DISCOVER */
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-y: scroll;
+
+        
+    }
+
+
+    .album__search i{
+        font-size: medium;
+    }
+    .album__search input[type="text"]{
+     
+        font-size: 16px; 
+      
+    }
+    .album__search button {
+      
+        padding: 8px 18px;
+        }
+    .album__discover h1{
+    font-size: 3rem;
+
+    }
+    .album__search button:hover {
+        border: 1px solid #1ed760; 
+    }
+    .album__discover :nth-child(1){
+        color: var(--color5);
+    }
+
+   /* top chart album gallery */
+    .album__songs img{
+        width: 150px;
+        transition: width 0.3s ease;
+    
+        border-radius: 1rem;
+    
+    }
+    .album__top{
+      
+     gap: 0;
+       padding-top: 2rem;
+       border-radius: 1rem;
+     
+    }
+    .album__songs img:hover{
+        width: 145px;
+        
+    
+       
+    }
+    .album__gallery{
+       
+    
+        justify-content: center;
+       /* padding: 0.5rem; */
+        gap: 1rem;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-y: scroll; 
+        height: 40vh;
+      
+    }
+    .album__subtitle{
+        display: flex;
+       flex-direction: row;
+      padding-left: 0rem;
+      padding-right:0rem;
+       font-size:1.5rem;
+      
+      justify-content: space-between;
+       /* width: 100%; */
+    
+    
+    
+    }
+   
+    /* week and row down icon  */
+    .album__week{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+   /* SECTION DE YOU MAY LIKE THIS*/
+
+
+            .album__mayLike{
+                display: flex;
+                flex-direction: column;
+                padding-left: 2rem;
+                gap: 1em;
+                background-color: var(--color2);
+                border-radius: 1rem;
+                color: var(--color3)
+                
+                
+                
+
+            }
+            .album__mayLikeName :nth-child(2){
+                color:rgba(255, 255, 255, 0.479)
+
+            }
+            .album__mayLikeTitle{
+                display: flex;
+                justify-content: flex-start;
+                font-size: 1.2rem;
+                padding-top: 1.5rem;
+                
+            }
+
+            .album__mayLikeSongs img{
+                width: 70px;
+                border-radius: 1rem;
+            
+            }
+            .album__mayLikeSongs{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                padding: 0.7rem;
+                width: 97%;
+                border-radius: 1rem;
+            
+            
+            
+            }
+            .album__mayLikeSongs:hover{
+                
+                    background-color: #242424;
+
+            }
+
+            .album__mayLikeGallery{
+             
+                gap: 1rem;
+            
+                height: 20vh;
+                
+                margin-bottom: 1rem;
+                overflow-y: scroll; 
+
+            }
+            .album__mayLikeSongs {
+                font-size: 0.8rem;
+
+            }
+            .album__mayLikeSongs :nth-child(3){
+                margin-left: 3rem;
+                font-size: smaller;
+                    }
+        main{
+            display: flex;
+          margin-left: 0.5rem;
+            width: 23.3rem;
+            gap:0rem;
+
+        }
+      
+            
+        
+
+        .main__heading{
+            padding-top: 2rem;
+            display: flex;
+          justify-content: center;
+       
+       
+            font-size: larger;
+        }
+        .frame__box{
+         
+           display:  flex;
+           width: 350px;
+           height: 560px;
+           padding: 0rem;
+           
+        }
+      
+       
+
+
+        .album__mainSearch{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        
+        
+        }
+        .album__mainSearch i{
+          
+            color:var(--color5);
+        }
+        .album__mainSearch input[type="text"]{
+         
+            font-size: 15px; /* Tamaño de fuente */
+          
+        }
+      
+        .album__mainSearch button:hover {
+            border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+        }
+
+
+        /* SECTION DE TRACK TODAS LAS CANCIONES */
+        .track__search{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding-left: 2rem;
+            
+          
+        }
+        .track__search i{
+            font-size: x-large;
+            color:var(--color5)
+        }
+        .track__search input[type="text"]{
+       
+            font-size: 15px; /* Tamaño de fuente */
+         
+        }
+        .track__search button {
+            padding: 10px 20px;
+            background-color:#242424; /* Color de fondo del botón */
+            color: #fff; /* Color de texto */
+            border: none; /* Sin borde */
+            border-radius: 0 50px 50px 0; /* Bordes redondeados a la derecha */
+            cursor: pointer;
+        }
+        .track__search button:hover {
+            border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+        }
 
 }
