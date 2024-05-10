@@ -437,12 +437,12 @@ img:hover{
     }
     .album__search input[type="text"]{
      
-        font-size: 16px; 
+        font-size: 0.8rem; 
       
     }
     .album__search button {
       
-        padding: 8px 18px;
+        padding: 0.5rem  0.8rem;
         }
     .album__discover h1{
     font-size: 3rem;
@@ -606,7 +606,7 @@ img:hover{
            
         }
       
-       
+     
 
 
         .album__mainSearch{
@@ -614,6 +614,7 @@ img:hover{
             gap: 1rem;
             align-items: center;
             padding-bottom: 1.5rem;
+            width: 80vw;
           
         
         
@@ -623,9 +624,11 @@ img:hover{
             color:var(--color5);
         }
         .album__mainSearch input[type="text"]{
-         
-            font-size: 15px; /* Tamaño de fuente */
+            font-size: 0.8rem;  /* Tamaño de fuente */
           
+        }
+        .album__mainSearch Button{
+            padding: 0.5rem  0.8rem;
         }
       
         .album__mainSearch button:hover {
@@ -642,26 +645,24 @@ img:hover{
             gap: 1rem;
             align-items: center;
             padding-left: 2rem;
+            width: 90vw;
            
             
           
         }
+        
         .track__search i{
             font-size: x-large;
             color:var(--color5)
         }
         .track__search input[type="text"]{
        
-            font-size: 15px; /* Tamaño de fuente */
+            font-size: 0.8rem;  /* Tamaño de fuente */
          
         }
         .track__search button {
-            padding: 10px 20px;
-            background-color:#242424; /* Color de fondo del botón */
-            color: #fff; /* Color de texto */
-            border: none; /* Sin borde */
-            border-radius: 0 50px 50px 0; /* Bordes redondeados a la derecha */
-            cursor: pointer;
+            padding: 0.5rem  0.8rem;
+         
         }
         .track__search button:hover {
             border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
