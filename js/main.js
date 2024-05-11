@@ -21,3 +21,31 @@ class myframe extends HTMLElement{
     }
 }
 customElements.define("my-frame",myframe)
+
+
+////////////////////////////////////////columnas
+// function ocultarTodasLasColumnas() {
+//     var columnas = document.querySelectorAll('.album');
+//     columnas.forEach(function(columna) {
+//         columna.style.display = 'none';
+//     });
+// }
+// function ocultarTodasLasColumnas() {
+//     var columnas = document.querySelectorAll('.main__heading');
+//     columnas.forEach(function(columna) {
+//         columna.style.display = 'none';
+//     });
+// }
+// function ocultarTodasLasColumnas() {
+//     var columnas = document.querySelectorAll('.main__heading');
+//     columnas.forEach(function(columna) {
+//         columna.style.display = 'none';
+//     });
+// }
+
+// function mostrarColumna(numColumna) {
+//     ocultarTodasLasColumnas();
+//     var columnaAMostrar = document.getElementById('columna' + numColumna);
+//     columnaAMostrar.style.display = 'block';
+// }
+// ////////////////////////////////////////
