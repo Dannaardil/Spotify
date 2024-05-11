@@ -102,12 +102,18 @@ body{
     color: rgba(255, 255, 255, 0.521)
     
 }
-.album__songs img{
-    width: 190px;
-    transition: width 0.3s ease;
+.album__songs {
+   
+    transition: padding 0.3s ease;
 
     border-radius: 1rem;
 
+}
+.album__songs:hover{
+    background-color: #242424;
+    padding: 0.4rem;
+    cursor: pointer;
+   
 }
 .album__subtitle{
     display: flex;
@@ -138,11 +144,17 @@ body{
     justify-content: center;
    /* padding: 0.5rem; */
     gap: 1rem;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
     overflow-y: scroll; 
-    height: 400px;
-  
+    height: 350px;
+    /* display: flex; */
+    flex-direction: column;
+    /* padding-left: 2rem;
+    gap: 1.5rem; */
+    background-color: var(--color2);
+    border-radius: 1rem;
+    color: var(--color3)
 }
 
 /* you may like this section  */
@@ -170,26 +182,31 @@ body{
     padding-top: 1rem;
     
 }
-
+/* 
 .album__mayLikeSongs img{
     width: 70px;
     border-radius: 1rem;
   
-}
+} */
 .album__mayLikeSongs{
     display: flex;
     gap: 1rem;
     align-items: center;
-    padding: 0.7rem;
-    width: 97%;
+    /* padding: 0.7rem; */
+    padding-right: 0.7rem;
+    width: 95%;
     border-radius: 1rem;
+    transition: padding 0.3s ease;
    
    
    
 }
 .album__mayLikeSongs:hover{
+    background-color: #242424;
+    padding: 0.4rem;
+    cursor: pointer;
     
-        background-color: #242424;
+        
 
 }
 
@@ -198,7 +215,7 @@ body{
     flex-direction: column;
     gap: 1rem;
  
-    height: 13vh;
+    height: 9vw;
     
     margin-bottom: 1rem;
     overflow-y: scroll; 
@@ -217,15 +234,17 @@ main{
    gap: 1.5em;
    background-color: var(--color2);
    border-radius: 1rem;
+  
    margin-top: 0.5rem;
    margin-bottom: 0.5rem;
-   justify-content: center;
+   justify-content: center
 
 
 }
 
 .main__heading{
     padding-top: 2rem;
+    padding-bottom: 7rem;
     font-size: larger;
 }
 .frame__box{
@@ -483,10 +502,11 @@ img:hover{
        /* padding: 0.5rem; */
         gap: 1rem;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
-        overflow-y: scroll; 
-        height: 40vh;
+        overflow-x: scroll; 
+        height: 89vw;
+       
       
     }
     .album__subtitle{
@@ -561,8 +581,10 @@ img:hover{
 
             .album__mayLikeGallery{
              
+                display: flex;
+                flex-direction: column;
                 gap: 1rem;
-            
+             
                 height: 20vh;
                 
                 margin-bottom: 1rem;
