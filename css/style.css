@@ -247,6 +247,8 @@ main{
     padding-bottom: 7rem;
     font-size: larger;
 }
+
+
 .frame__box{
     display: flex;
     justify-content: center;
@@ -457,6 +459,7 @@ img:hover{
         
     }
     .album{
+        display: flex;
         width: 100vw;
     }
 
@@ -610,7 +613,7 @@ img:hover{
                 font-size: smaller;
                     }
         main{
-            display: flex;
+            display: none;
           margin-left: 0.5rem;
           width: 95vw;
             gap:0rem;
@@ -670,6 +673,7 @@ img:hover{
 
         /* SECTION DE TRACK TODAS LAS CANCIONES */
         .track{
+            display: none;
             padding-bottom: 1rem;
         }
         .track__search{
