@@ -84,4 +84,92 @@ function mostrarColumna(numColumna) {
 // }
 
 
- 
+
+
+// const url = 'https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=albums&offset=0&limit=10&numberOfTopResults=5';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
+// 		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+//     fetch(url)
+
+// } catch (error) {
+// 	console.error(error);
+// }
+
+//  export class myClase extends HTMLElement {
+
+//  }
+// class AlbumSearch extends HTMLElement {
+//   constructor() {
+//     super();
+//     this.attachShadow({ mode: 'open' });
+//     this.shadowRoot.innerHTML = `
+//       <style>
+//         /* Estilos CSS para el componente */
+//       </style>
+//       <input type="text" placeholder="Buscar álbum...">
+//       <ul></ul>
+//     `;
+
+//     this.input = this.shadowRoot.querySelector('input');
+//     this.list = this.shadowRoot.querySelector('ul');
+//     this.input.addEventListener('input', this.handleSearch.bind(this));
+//   }
+
+//   connectedCallback() {
+//     this.loadData();
+//   }
+
+//   async loadData() {
+//     try {
+//       const response = await fetch('./json/album');
+//       const data = await response.json();
+//       this.albums = data.albums.items;
+//       this.renderInitialData();
+//     } catch (error) {
+//       console.error('Error al cargar los datos:', error);
+//     }
+//   }
+
+//   handleSearch() {
+//     const query = this.input.name.trim().toLowerCase();
+//     const albums = this.getAlbums();
+
+//     const filteredAlbums = albums.filter(album =>
+//       album.data.name.toLowerCase().includes(query)
+//     );
+
+//     this.renderAlbums(filteredAlbums);
+//   }
+
+//   getAlbums() {
+//     return this.albums || [1];
+//   }
+
+//   renderAlbums(albums) {
+//     this.list.innerHTML = '';
+
+//     albums.forEach(album => {
+//       const li = document.createElement('li');
+//       const albumName = document.createElement('span');
+//       albumName.textContent = album.data.name;
+//       li.appendChild(albumName);
+//       this.list.appendChild(li);
+//     });
+//   }
+
+//   renderInitialData() {
+//     const albums = this.getAlbums();
+//     this.renderAlbums(albums);
+//   }
+// }
+
+// customElements.define('album-search', AlbumSearch);

@@ -1,0 +1,24 @@
+{
+    "albums": [
+      {
+        "name": "Thriller",
+        "artist": "Michael Jackson"
+      },
+      {
+        "name": "Back in Black",
+        "artist": "AC/DC"
+      },
+      {
+        "name": "The Dark Side of the Moon",
+        "artist": "Pink Floyd"
+      },
+      {
+        "name": "Abbey Road",
+        "artist": "The Beatles"
+      },
+      {
+        "name": "Born in the U.S.A.",
+        "artist": "Bruce Springsteen"
+      }
+    ]
+  }

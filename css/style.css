@@ -73,10 +73,11 @@ body{
     border: none; 
     border-radius: 0 50px 50px 0; 
     cursor: pointer;
+    transition: background-color ease-in-out 0.3s; 
     /* transition: border 0.3s ease; */
 }
 .album__search button:hover {
-    border: 1px solid #fff; 
+    color: var(--color5)
 }
 
 
@@ -285,9 +286,10 @@ main{
     border: none; /* Sin borde */
     border-radius: 0 50px 50px 0; /* Bordes redondeados a la derecha */
     cursor: pointer;
+    transition: background-color ease-in-out 0.3s; 
 }
 .album__mainSearch button:hover {
-    border: 1px solid #fff; /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+    color: var(--color5) /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
 }
 
 /* parte derecha track  */
@@ -368,9 +370,10 @@ main{
     border: none; /* Sin borde */
     border-radius: 0 50px 50px 0; /* Bordes redondeados a la derecha */
     cursor: pointer;
+    transition: background-color ease-in-out 0.3s; 
 }
 .track__search button:hover {
-    border: 1px solid #fff; /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+  color: var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
 }
 
 
@@ -481,7 +484,7 @@ img:hover{
 
     }
     .album__search button:hover {
-        border: 1px solid #1ed760; 
+        bord: 1px solid #1ed760; 
     }
     .album__discover :nth-child(1){
         color: var(--color5);
@@ -497,7 +500,7 @@ img:hover{
     }
     .album__top{
       
-     gap: 0;
+     gap: 1rem;
        padding-top: 2rem;
        border-radius: 1rem;
      
