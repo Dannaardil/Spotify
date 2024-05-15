@@ -280,6 +280,15 @@ main{
   
    
 }
+
+.albumMayCover{
+    display: flex;
+  flex-wrap: wrap;
+    /* background-color: red; */
+    
+
+    align-items: center;
+}
 .album__mainSearch i{
     font-size: x-large;
 }
@@ -592,16 +601,16 @@ img:hover{
             
             }
             .album__mayLikeSongs{
-                display: flex;
-                gap: 1rem;
-                align-items: center;
-                padding: 0.7rem;
-                width: 97%;
-                border-radius: 1rem;
-            
+              /* background-color: red; */
+              display: flex;
+              
+              justify-content: start;
+             
+           
             
             
             }
+         
             .album__mayLikeSongs:hover{
                 
                     background-color: #242424;
