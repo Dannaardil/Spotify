@@ -92,12 +92,8 @@ body{
    gap: 2rem;
    color: var(--color3)
 }
-.album__songs img:hover{
-    width: 200px;
-    
 
-   
-}
+
 .album__songs :nth-child(3){
     color: rgba(255, 255, 255, 0.521)
     
@@ -156,6 +152,24 @@ body{
     border-radius: 1rem;
     color: var(--color3)
 }
+
+album-cover-list{
+    /* background-color: red */
+  
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ 
+
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    
+    overflow-y: scroll;
+  
+}
+
 
 /* you may like this section  */
 
@@ -522,6 +536,7 @@ img:hover{
        
       
     }
+
     .album__subtitle{
         display: flex;
        flex-direction: row;
@@ -535,6 +550,7 @@ img:hover{
     
     
     }
+   
    
     /* week and row down icon  */
     .album__week{
