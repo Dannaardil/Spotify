@@ -39,49 +39,6 @@ function mostrarColumna(numColumna) {
 }
 
 
-// //////////////////////pruebas ///
-// const searchForm = document.getElementById('searchForm');
-// const searchInput = document.getElementById('searchInput');
-// const spotifyPlayer = document.getElementById('spotifyPlayer');
-
-// searchForm.addEventListener('submit', function(event) {
-//     event.preventDefault(); // Evitar que se recargue la página al enviar el formulario
-
-//     const searchTerm = searchForm.displayName;
-
-//     // Realizar la búsqueda en la API de Spotify
-//     buscarCancionEnSpotify(searchTerm)
-//         .then(function(songId) {
-//             // Actualizar el iframe de Spotify con la nueva canción
-//             mostrarCancionEnSpotify(songId);
-//         })
-//         .catch(function(error) {
-//             console.error('Error al buscar la canción:', error);
-//         });
-// });
-// function buscarCancionEnJson(searchTerm) {
-//     // Realizar una solicitud para cargar el archivo JSON
-//     return fetch('./album.json')
-   
-//         .then(response => response.json())
-//         .then(data => {
-//             // Buscar la canción en el archivo JSON
-//             const cancionEncontrada = data.find(cancion => cancion.nombre.toLowerCase().includes(searchTerm.toLowerCase()));
-
-//             if (cancionEncontrada) {
-//                 return cancionEncontrada.id;
-//             } else {
-//                 throw new Error('Canción no encontrada');
-//             }
-//         });
-// }
-
-// function mostrarCancionEnSpotify(songId) {
-//     // Actualizar el iframe de Spotify con la nueva canción
-//     const iframeSrc = `https://open.spotify.com/embed/album/${songId}`;
-//     spotifyPlayer.innerHTML = `<iframe style="border-radius:12px" src="${iframeSrc}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-    
-// }
 
 
  
