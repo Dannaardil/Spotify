@@ -41,170 +41,100 @@ customElements.define("my-frame",myframe)
 
 
 //////////////////////albums mostrar imagenes de los albums  y asignar el id //////////////////////////
+// Album Cover Element
 class AlbumCoverElement extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
-    const img = document.createElement('img');
-    
-    img.src = this.getAttribute('src');
-    img.alt = this.getAttribute('alt');
-          
-    shadow.appendChild(img);
+    const imgSrc = this.getAttribute('src');
+    const imgAlt = this.getAttribute('alt');
+    this.innerHTML = `
+      <img src="${imgSrc}" alt="${imgAlt}" class="album-cover">
+    `;
   }
 }
+customElements.define('album-cover', AlbumCoverElement);
 
+// Album Cover List Element
 class AlbumCoverListElement extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
-  
-     fetch('./json/albums.json')
-     
-     
-     .then(response => response.json())
-     .then(albumData => {
-       const albumCovers = albumData.albums.items
-       .slice(0, 10)
-       .map(album => {
-         const coverUrl = album.data.coverArt.sources[0].url;
-                //   const albumName = album.data.uri;
-                const albumId = album.data.uri.split(':')[2]
-                const albumCover = document.createElement('img');
+    fetch('./json/albums.json')
+      .then(response => response.json())
+      .then(albumData => {
+        const albumCovers = albumData.albums.items
+          .slice(0, 10)
+          .map(album => {
+            const coverUrl = album.data.coverArt.sources[0].url;
+            const albumId = album.data.uri.split(':')[2];
+         
+            const albumCover = `
+              <div class="album-container">
+                <img src="${coverUrl}" data-id="${albumId}" class="album-cover">
+             
+              </div>
+            `;
+            return albumCover;
+          });
+        this.innerHTML = albumCovers.join('');
+        this.addEventListener('click', this.handleAlbumClick.bind(this));
+      })
+      .catch(error => console.error('Error al cargar los datos:', error));
+  }
 
-              
-                const albumName = album.data.name;
-                
-                albumCover.setAttribute('src', coverUrl);
-                albumCover.setAttribute('id', albumId);
-                albumCover.setAttribute('name', albumName);
-
-                // albumCover.()
-                
-                  albumCover.setAttribute('width', '200px');
-                  albumCover.setAttribute('height', '200px');
-                  albumCover.setAttribute('class', 'album-imagen');
-                
-                  albumCover.addEventListener('click', this.handleAlbumClick.bind(this))
-                  
-                  
-                  return albumCover;
-                });
-            
-            
-            
-            
-            albumCovers.forEach(cover => shadow.appendChild(cover));
-            console.log(albumCovers);
-            
-            
-            
-            
-          })
-          .catch(error => console.error('Error al cargar los datos:', error));
+  handleAlbumClick(event) {
+    const clickedElement = event.target.closest('.album-container');
+    if (clickedElement) {
+      const albumId = clickedElement.querySelector('.album-cover').dataset.id;
   
-          
-        }
-        handleAlbumClick(event) {
-      const clickedAlbum = event.target; 
-      const albumId= clickedAlbum.getAttribute('id'); 
       const myFrame = document.querySelector('.main__frame');
-      const albumName = clickedAlbum.getAttribute('name');
-      
-      
-      //   const uri = "https://open.spotify.com/embed/"
-      // Actualizar el atributo 'uri' con el nuevo ID
+
       myFrame.setAttribute('uri', `spotify:album:${albumId}`);
-      
-      
-      // Access album name from alt attribute
-      console.log(`Album "${albumName}"`);
-      
+     
     }
   }
-  
+}
+customElements.define('album-cover-list', AlbumCoverListElement);
+// Album Cover Element
+// Album Cover Element
 
+///////////////////////77SECTION MAY LIKEEEEEEEEEEEEEEEEEEEE
+// Album Cover List Element
+class AlbumCoverListElement2 extends HTMLElement {
+  constructor() {
+    super();
+    fetch('./json/albums.json')
+      .then(response => response.json())
+      .then(albumData => {
+        const albumCovers = albumData.albums.items
+          .slice(0, 10)
+          .map(album => {
+            const coverUrl = album.data.coverArt.sources[0].url;
+            const albumId = album.data.uri.split(':')[2];
+            const albumName = album.data.name;
+            const albumCover = `
+              <div class="albumMayContainer">
+                <img src="${coverUrl}" data-id="${albumId}" class="album-may">
+                <span class="album-name-may">${albumName}</span>
+              </div>
+            `;
+            return albumCover;
+          });
+        this.innerHTML = albumCovers.join('');
+        this.addEventListener('click', this.handleAlbumClick.bind(this));
+      })
+      .catch(error => console.error('Error al cargar los datos:', error));
+  }
 
-  //  customElements.define('myFrame',handleAlbumClick )
-  customElements.define('album-cover', AlbumCoverElement);
-  customElements.define('album-cover-list', AlbumCoverListElement);
-  //////////////////////////////77mostrar columnas responsive ///
-  // function ocultarTodasLasColumnas() {
-    //     var columnas = document.querySelectorAll('.column');
-    //     columnas.forEach(function(columna) {
-      //         columna.style.display = 'none';
-      //     });
-      // }
-      
-      // function mostrarColumna(numColumna) {
-        //     console.log(numColumna);
-        //     ocultarTodasLasColumnas();
-        //     var columnaAMostrar = document.getElementById(`columna${numColumna}`);
-        //     columnaAMostrar.style.display = 'flex';
-        // }
-        
-        ////////////may like 
-        class AlbumCoverListElement2 extends HTMLElement {
-          constructor() {
-            super();
-            const shadow = this.attachShadow({ mode: 'open' });
-            
-            fetch('./json/albums.json')
-            .then(response => response.json())
-            .then(albumData => {
-              const albumCovers = albumData.albums.items
-                  .slice(0, 10)
-                  .map(album => {
-                    const coverUrl = album.data.coverArt.sources[0].url;
-                    const albumId = album.data.uri.split(':')[2];
-                    const albumName = album.data.name;
-                    
-                    // Create a container element for image and text
-                    const albumContainer = document.createElement('div');
-                    albumContainer.classList.add('album-container');
-                    
-                    const albumCover = document.createElement('img');
-                    albumCover.src = coverUrl;
-                    albumCover.setAttribute('id', albumId);
-                    albumCover.width = 100;
-                    albumCover.height = 100;
-                    albumCover.classList.add('album-imagen');
-                    
-                    const albumNameText = document.createElement('span');
-                    albumNameText.textContent = albumName;
-                    albumNameText.classList.add('album-name');
-                    
-                    
-                    // Append image and text to the container
-                    albumContainer.appendChild(albumCover);
-                    albumContainer.appendChild(albumNameText);
-                    
-                // Add click event listener to the container
-                albumContainer.addEventListener('click', this.handleAlbumClick.bind(this));
-                
-                return albumContainer;
-              });
-              
-              albumCovers.forEach(cover => shadow.appendChild(cover));
-              console.log(albumCovers);
-            })
-            .catch(error => console.error('Error al cargar los datos:', error));
-          }
-          
-          handleAlbumClick(event) {
-            const clickedAlbumContainer = event.target.closest('.album-container'); // Get the closest container element
-            if (clickedAlbumContainer) {
-              const albumId = clickedAlbumContainer.querySelector('img').getAttribute('id');
-              const albumName = clickedAlbumContainer.querySelector('.album-name').textContent;
-              const style = clickedAlbumContainer.querySelector('.album-name').style.gap('2px');
-              const myFrame = document.querySelector('.main__frame');
-              
-              myFrame.setAttribute('uri', `spotify:album:${albumId}`);
-              
-          console.log(`Album "${albumName}" clicked!`);
-        }
-      }
+  handleAlbumClick(event) {
+    const clickedElement = event.target.closest('.albumMayContainer');
+    if (clickedElement) {
+      const albumId = clickedElement.querySelector('.album-may').dataset.id;
+      const albumName = clickedElement.querySelector('.album-name-may').textContent;
+      const myFrame = document.querySelector('.main__frame');
+
+      myFrame.setAttribute('uri', `spotify:album:${albumId}`);
+      console.log(`Album "${albumName}" clicked!`);
     }
-    
-    
-    customElements.define('album-may_cover', AlbumCoverListElement2);
+  }
+}
+customElements.define('album-may-cover', AlbumCoverListElement2);
