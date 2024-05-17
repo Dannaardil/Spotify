@@ -114,7 +114,8 @@ class AlbumCoverListElement2 extends HTMLElement {
             const albumCover = `
               <div class="albumMayContainer">
                 <img src="${coverUrl}" data-id="${albumId}" class="album-may">
-                <span class="album-name-may">${albumName}</span>
+                
+                <p class="album-name-may">${albumName}</p>
               </div>
             `;
             return albumCover;
