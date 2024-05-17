@@ -239,7 +239,56 @@ album-cover-list{
     margin-left: 3rem;
 }
 
+.album-may{
+
+    width: 100%;
+/* margi: 0.2rem; */
+  
+  
+    /* background-color: #1ed760; */
+}
+.albumMayContainer{
+    /* background-color: red; */
+    margin: 0.2rem;
+    padding: 0.2rem;
+
+    gap: 1.5rem;
+ align-items: center;
+margin-right: 1.5rem;
+ border-radius: 1rem;
+ 
+ 
+  
+ display: flex;
+transition: padding ease 0.3s;
+  
+
+    
+}
+
+.albumMayContainer:hover{
+    background-color: var(--color4);
+    padding: 0.5rem;
+    
+
+}
+.albumMayContainer img{
+    width: 100px;
+    border-radius: 1rem;
+   
+}
+
+.albumMayContainer p {
+    /* background-color: rgb(91, 87, 87); */
+    display: flex;
+
+    display: inline;
+
+
+}
+
 /* seccion del centro (main)  */
+
 
 main{
     display: flex;
