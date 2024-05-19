@@ -398,9 +398,19 @@ main{
     
 }
 /* seccion de las canciones lista */
+.track__songs{
+    overflow-y: scroll;
+    height: 37vw;
+
+     padding-left: 1.5rem;
+}
+.playNextDescription h4{
+    font-size: 1rem;
+}
 .track__songsName{
     display: flex;
     align-items: center;
+    
    
     
   
@@ -410,7 +420,8 @@ main{
 }
 .track__playingNext{
     padding-left: 2rem;
-    font-size: large;
+    font-size: 2rem;
+    color: var(--color5);
 
 }
 .track__search{
@@ -434,76 +445,35 @@ main{
     font-size: 18px; /* Tamaño de fuente */
     outline: none; /* Sin contorno al enfocar */
 }
-.track__search button {
-    padding: 10px 20px;
-    background-color:#242424; /* Color de fondo del botón */
-    color: #fff; /* Color de texto */
-    border: none; /* Sin borde */
-    border-radius: 0 50px 50px 0; /* Bordes redondeados a la derecha */
-    cursor: pointer;
-}
-.track__search button:hover {
-    border: 1px solid #fff; /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
-}
 
-
-
-
-.track__songs{
-    display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 75vh;
+.playNextBox{
     gap: 1rem;
-     padding-left: 2rem;
-  
-}
-.track__description{
     display: flex;
-    
-    
-
-    
-   
-}
-
-.track__description :nth-child(2){
-    color:rgba(255, 255, 255, 0.479)
-
-}
-
-.track__time{
-    display: flex;
-    flex-direction: column;
-   margin-left: 3rem;
-   margin-right: 2em;
-
-  
-
-}
-.track__hora{
-    font-size: small;
-}
-.track__año{
-    align-self: center;
-    font-size: smaller;
-}
-.track__songsName{
-   
+    margin-bottom: 1rem;
+    align-items: center;
+    width: 95%;
     border-radius: 1rem;
-    transition: padding 0.3s ease;
-    width: 98%;
+
 }
-.track__songsName:hover{
-    background-color: #242424;
-    padding: 0.4rem;
-    cursor: pointer;
+.playNextBox:hover{
+ background-color: var(--color4);
+padding: 0.5rem;
+transition: ease 0.3s;
+
 }
-.track__songsName img{
-    width: 68px;
-    border-radius: 0.8rem;
- 
+.playNextDescription{
+
+    display: flex;
+    font-size: 0.9rem;
 }
+.playNextBox img{
+    width: 85px;
+    border-radius: 1rem;
+}
+
+    
+
+
 img:hover{
     cursor: pointer;
    
@@ -550,7 +520,7 @@ img:hover{
         padding: 0.5rem  0.8rem;
         }
     .album__discover h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
 
     }
     .album__search button:hover {
@@ -591,17 +561,31 @@ img:hover{
         flex-direction: column;
         flex-wrap: nowrap;
         overflow-x: scroll; 
-        height: 89vw;
-       
-      
+        height: 50vw
+    
+    };
+    .album-cover-list{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        overflow-x: scroll;
+        width: 100%;
+        flex-wrap: nowrap;
+        padding-left: 15rem;
     }
+       
+      .album-container img{
+        width: 120px;
+        height: 120px;
+      }
+    
 
     .album__subtitle{
         display: flex;
        flex-direction: row;
       padding-left: 0rem;
       padding-right:0rem;
-       font-size:1.5rem;
+       font-size:1.6rem;
       
       justify-content: space-between;
        /* width: 100%; */
@@ -618,7 +602,9 @@ img:hover{
         gap: 1rem;
     }
    /* SECTION DE YOU MAY LIKE THIS*/
-
+              .albumMayContainer img{
+                width: 75px;
+              }
 
             .album__mayLike{
                 display: flex;
@@ -673,12 +659,13 @@ img:hover{
                 flex-direction: column;
                 gap: 1rem;
              
-                height: 20vh;
+                height: 12vh;
                 
                 margin-bottom: 1rem;
                 overflow-y: scroll; 
 
             }
+          
             .album__mayLikeSongs {
                 font-size: 0.8rem;
 
@@ -777,6 +764,13 @@ img:hover{
         }
         .track__search button:hover {
             border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+        }
+        .track__songs{
+
+            overflow-y: scroll;
+            height: 155vw;
+
+             padding: 0.5rem;
         }
         /* ////////////////////////// menu bar //////////////////////////; */
 
