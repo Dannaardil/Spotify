@@ -11,7 +11,7 @@
 }
 /* completo grid de 3 columnas */
 body{
-   background-color: black;
+   background-color: var(--color1);
     display:grid;
     grid-template-columns: 1fr 1.8fr 1fr;
     color: var(--color3);
@@ -516,7 +516,7 @@ img:hover{
       
     }
     .album__search button {
-      
+      background-color: var(--color4);
         padding: 0.5rem  0.8rem;
         }
     .album__discover h1{
@@ -561,7 +561,8 @@ img:hover{
         flex-direction: column;
         flex-wrap: nowrap;
         overflow-x: scroll; 
-        height: 50vw
+        height: 50vw;
+        background-color:transparent
     
     };
     .album-cover-list{

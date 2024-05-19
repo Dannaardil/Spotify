@@ -15,7 +15,7 @@ class myframe extends HTMLElement {
             const id = uri.split(':')[2];
             const type = uri.split(':')[1];
             this.shadowRoot.innerHTML = `
-                <iframe class="spotify-iframe" width="350" height="670" src="https://open.spotify.com/embed/${type}/${id}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <iframe class="spotify-iframe" width="338" height="670" src="https://open.spotify.com/embed/${type}/${id}" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             `;
         } else {
             this.shadowRoot.innerHTML = null;
@@ -64,8 +64,8 @@ class albumShow extends HTMLElement {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
+        // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
       }
     };
 
@@ -100,8 +100,8 @@ class albumShow extends HTMLElement {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
+        // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
       }
     };
 
@@ -175,8 +175,8 @@ class AlbumTracksComponent extends HTMLElement {
         const options = {
           method: 'GET',
           headers: {
-            'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
+            // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
           }
         };
        
@@ -281,3 +281,41 @@ class albumShow2 extends HTMLElement {
   }
 }
 customElements.define('album-may-cover', albumShow2);
+
+
+
+////////////////////cambiar colores ////////
+document.getElementById('colorButton').addEventListener('click', function() {
+  const root = document.documentElement;
+  
+  const originalColors = {
+    color1: 'black',
+    color2: '#121212',
+    color3: 'rgb(255, 255, 255)',
+    color4:  '#242424',
+    color5: '#1ed760',
+  };
+
+  const newColors = {
+    color1: 'white',
+    color2: 'rgba(168, 168, 168, 0.753)',
+    color3: 'white',
+    color4: 'rgba(168, 168, 168, 0.753)',
+    color5: 'white'
+  };
+
+  const currentColors = {
+    color1: getComputedStyle(root).getPropertyValue('--color1').trim(),
+    color2: getComputedStyle(root).getPropertyValue('--color2').trim(),
+    color3: getComputedStyle(root).getPropertyValue('--color3').trim(),
+    color4: getComputedStyle(root).getPropertyValue('--color4').trim(),
+    color5: getComputedStyle(root).getPropertyValue('--color5').trim()
+  };
+
+  const useNewColors = Object.keys(originalColors).every(key => currentColors[key] === originalColors[key]);
+
+  Object.keys(originalColors).forEach(key => {
+    root.style.setProperty(`--${key}`, useNewColors ? newColors[key] : originalColors[key]);
+  });
+});
+
