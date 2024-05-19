@@ -196,28 +196,20 @@ class AlbumTracksComponent extends HTMLElement {
           let templates = '';
           album.tracks.items.forEach(track => {
               templates += `
-                  <div class="trackSongsName">
+                  <div class="playNextBox">
                       <i class='bx bx-menu'></i>
                       <img src="${imageUrl}" alt="" data-id="${track.uri}">
-                      <div class="trackDescription">
+                      <div class="playNextDescription">
                           <div>
                               <h4>${track.name}</h4>
-                              <p class="artist__name">${track.artists[0].name}</p>
+                              <p class="playNextArtist">${track.artists[0].name}</p>
                           </div>
-                          <div class="track__time">
-                              <p class="track__año">${album.release_date}</p>
-                          </div>
+                         
                       </div>
                   </div>
               `;
           });
           this.innerHTML = templates;
-
-          setTimeout(() => {
-              this.querySelectorAll('.trackSongsName').forEach(track => {
-                  track.classList.add('active');
-              });
-          }, 100);
           
           this.querySelectorAll('img').forEach(img => {
               img.addEventListener('click', () => {
