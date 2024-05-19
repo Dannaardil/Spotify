@@ -23,13 +23,13 @@
     <aside class="album column" id = "columna1">
         <header class= "album__discover">
             <h1>Discover<br> New Music</h1>
-            <form class = "album__search"  >
+            <div class = "album__search"  >
                 <i class='bx bx-search-alt-2'></i>
                 <input id="searchForm"type="text" placeholder="Buscar...">
                 <button type="submit" id= "buttonSearch">Buscar</button>
               
 
-            </form>
+            </div>
 
             
         </header>
@@ -83,7 +83,7 @@
             <h3>Now playing</h3>
         </heading>
         <div class="frame__box">
-            <my-frame class= "main__frame"uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis"></my-frame>
+            <my-frame id= "main__frame" class= "main__frame"uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis"></my-frame>
 
 
         </div>
@@ -112,7 +112,7 @@
 
 
     </div>
-    <div class="track__playingNext">
+    <div class="track__playingNext"id = "album__mayLikeGallery">
         <h5>Playing next</h5>
 
 
@@ -124,8 +124,9 @@
 
         <div class= "track__songs">
             
-           <album-may-cover></album-may-cover>
+            <album-tracks class="playNext" uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis">
 
+            </album-tracks>
 
                   
 

@@ -42,9 +42,8 @@ customElements.define("my-frame",myframe)
 
 
 //////////////////////albums mostrar imagenes de los albums  y asignar el id //////////////////////////
-// Album Cover Element
-// Album Cover Element
-class AlbumCoverElement extends HTMLElement {
+
+class AlbumImage extends HTMLElement {
   constructor() {
     super();
     const imgSrc = this.getAttribute('src');
@@ -55,10 +54,10 @@ class AlbumCoverElement extends HTMLElement {
   }
 }
 
-customElements.define('album-cover', AlbumCoverElement);
+customElements.define('album-cover', AlbumImage);
 
 // Album Cover List Element
-class AlbumCoverListElement extends HTMLElement {
+class albumShow extends HTMLElement {
   constructor() {
     super();
     const url = 'https://spotify23.p.rapidapi.com/search/?q=%3CREQUIRED%3E&type=multi&offset=0&limit=10&numberOfTopResults=5';
@@ -70,17 +69,17 @@ class AlbumCoverListElement extends HTMLElement {
       }
     };
 
-    this.loadAlbums('Taylor%20Swift');
+    this.showAlbum('Taylor%20Swift');
 
-    // Agregar evento al botón de búsqueda
+
     const searchButton = document.getElementById('buttonSearch');
     const searchInput = document.getElementById('searchForm');
-
+/// que busqu cuando se le da click al boton de busqueda ///
     searchButton.addEventListener('click', () => {
       const searchTerm = searchInput.value.trim();
     
       if (searchTerm !== '') {
-        this.loadAlbums(searchTerm);
+        this.showAlbum(searchTerm);
       }
     });
 
@@ -89,13 +88,13 @@ class AlbumCoverListElement extends HTMLElement {
       if (event.key === 'Enter') {
         const searchTerm = searchInput.value.trim();
         if (searchTerm !== '') {
-          this.loadAlbums(searchTerm);
+          this.showAlbum(searchTerm);
         }
       }
     });
   }
 
-  async loadAlbums(searchTerm) {
+  async showAlbum(searchTerm) {
     const formattedSearchTerm = searchTerm.replace(/\s/g, '%20');
     const url = `https://spotify23.p.rapidapi.com/search/?q=${formattedSearchTerm}&type=albums&offset=0&limit=10&numberOfTopResults=5`;
     const options = {
@@ -112,6 +111,7 @@ class AlbumCoverListElement extends HTMLElement {
       const albumCovers = data.albums.items.map(album => {
         const coverUrl = album.data.coverArt.sources[0].url;
         const albumId = album.data.uri.split(':')[2];
+       
         const albumCover = `
           <div class="album-container">
             <img src="${coverUrl}" data-id="${albumId}" class="album-cover">
@@ -122,6 +122,15 @@ class AlbumCoverListElement extends HTMLElement {
 
       this.innerHTML = albumCovers.join('');
       this.addEventListener('click', this.handleAlbumClick.bind(this));
+      this.querySelectorAll('img').forEach(img => {
+        img.addEventListener('click', () => {
+            const id = img.dataset.id;
+          
+            const AlbumTracksComponent = document.querySelector('.playNext');
+            AlbumTracksComponent.setAttribute('uri', `spotify:album:${id}`);
+           
+        });
+    });
     } catch (error) {
       console.error('Error al cargar los datos:', error);
     }
@@ -137,10 +146,110 @@ class AlbumCoverListElement extends HTMLElement {
   }
 }
 
-customElements.define('album-cover-list', AlbumCoverListElement);
+customElements.define('album-cover-list', albumShow);
+
+
+////para que se reproduzcan las canciones de el album en la parte de track////////////
+
+class AlbumTracksComponent extends HTMLElement {
+  constructor() {
+      super();
+  }
+
+  connectedCallback() {
+      this.renderFrame();
+  }
+
+  async renderFrame() {
+      const uri = this.getAttribute('uri');
+      
+      if (uri) {
+          const id = uri.split(':')[2];
+          await this.loadTrackList(id);
+      }
+  }
+
+  async loadTrackList(albumId) {
+
+        const url = `https://spotify23.p.rapidapi.com/albums/?ids=${albumId}`;
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+          }
+        };
+       
+
+
+      try {
+          const response = await fetch(url, options);
+          const result = await response.json();
+
+          // Obtener el primer álbum de la respuesta
+          const album = result.albums[0];
+
+          // Obtener la URL de la tercera imagen
+          const imageUrl = album.images[2].url;
+
+          // Crear la plantilla HTML para cada pista del álbum
+          let templates = '';
+          album.tracks.items.forEach(track => {
+              templates += `
+                  <div class="trackSongsName">
+                      <i class='bx bx-menu'></i>
+                      <img src="${imageUrl}" alt="" data-id="${track.uri}">
+                      <div class="trackDescription">
+                          <div>
+                              <h4>${track.name}</h4>
+                              <p class="artist__name">${track.artists[0].name}</p>
+                          </div>
+                          <div class="track__time">
+                              <p class="track__año">${album.release_date}</p>
+                          </div>
+                      </div>
+                  </div>
+              `;
+          });
+          this.innerHTML = templates;
+
+          setTimeout(() => {
+              this.querySelectorAll('.trackSongsName').forEach(track => {
+                  track.classList.add('active');
+              });
+          }, 100);
+          
+          this.querySelectorAll('img').forEach(img => {
+              img.addEventListener('click', () => {
+                  const id = img.dataset.id;
+                  const myFrame = document.querySelector('.main__frame');
+                  myFrame.setAttribute('uri', `spotify:track:${id}`);
+                  
+              });
+          });
+      } catch (error) {
+          console.error(error);
+      }
+  }
+
+  static get observedAttributes() {
+      return ['uri'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'uri' && oldValue !== newValue) {
+          this.renderFrame();
+      }
+  }
+}
+
+customElements.define('album-tracks', AlbumTracksComponent);
+
+
+
 ///////////////////////77SECTION MAY LIKEEEEEEEEEEEEEEEEEEEE
 // Album Cover List Element
-class AlbumCoverListElement2 extends HTMLElement {
+class albumShow2 extends HTMLElement {
   constructor() {
     super();
     fetch('./json/albums.json')
@@ -179,4 +288,4 @@ class AlbumCoverListElement2 extends HTMLElement {
     }
   }
 }
-customElements.define('album-may-cover', AlbumCoverListElement2);
+customElements.define('album-may-cover', albumShow2);
