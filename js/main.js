@@ -64,8 +64,8 @@ class albumShow extends HTMLElement {
     const options = {
       method: 'GET',
       headers: {
-        // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-        // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        'X-RapidAPI-Key': '198deaf6ffmshbc16ea84d5b3a79p18ee5ejsnb8d9d76b0f89',
+        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
       }
     };
 
@@ -100,8 +100,8 @@ class albumShow extends HTMLElement {
     const options = {
       method: 'GET',
       headers: {
-        // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-        // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        'X-RapidAPI-Key': '198deaf6ffmshbc16ea84d5b3a79p18ee5ejsnb8d9d76b0f89',
+        'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
       }
     };
 
@@ -175,8 +175,8 @@ class AlbumTracksComponent extends HTMLElement {
         const options = {
           method: 'GET',
           headers: {
-            // 'X-RapidAPI-Key': '2a79d9d097msha23448f0aaf24bap1737a2jsn024f95d36e5e',
-            // 'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+            'X-RapidAPI-Key': '198deaf6ffmshbc16ea84d5b3a79p18ee5ejsnb8d9d76b0f89',
+            'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
           }
         };
        
@@ -199,6 +199,7 @@ class AlbumTracksComponent extends HTMLElement {
                   <div class="playNextBox">
                       <i class='bx bx-menu'></i>
                       <img src="${imageUrl}" alt="" data-id="${track.uri}">
+
                       <div class="playNextDescription">
                           <div>
                               <h4>${track.name}</h4>
@@ -215,7 +216,7 @@ class AlbumTracksComponent extends HTMLElement {
               img.addEventListener('click', () => {
                   const id = img.dataset.id;
                   const myFrame = document.querySelector('.main__frame');
-                  myFrame.setAttribute('uri', `spotify:track:${id}`);
+                  myFrame.setAttribute('uri', `${id}`);
                   
               });
           });
