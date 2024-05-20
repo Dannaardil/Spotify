@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-   
+
     <link rel="icon" type="image/png" href="storage/img/spotify.png">
-    
+
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
- 
-    <script src="./js/main.js" type = "module" defer></script>
+
+    <script src="./js/main.js" type="module" defer></script>
 
     <script src="./js/menuMobile.js"></script>
     <title>Spotify</title>
-    
-  
+
+
 </head>
+
 <body>
     <!-- SECTION ALBUM IZQUIERDA PRIMERA COLUMNA -->
-    <aside class="album column" id = "columna1">
-        <header class= "album__discover">
+    <aside class="album column" id="columna1">
+        <header class="album__discover">
             <h1>Discover<br> New Music</h1>
-            <div class = "album__search"  >
+            <div class="album__search">
                 <i class='bx bx-search-alt-2'></i>
-                <input id="searchForm"type="text" placeholder="Buscar...">
-                <button type="submit" id= "buttonSearch">Buscar</button>
-              
+                <input id="searchForm" type="text" placeholder="Buscar...">
+                <button type="submit" id="buttonSearch">Buscar</button>
+
 
             </div>
 
-            
+
         </header>
-        <section class= "album__top">
-            <div class="album__subtitle" >
+        <section class="album__top">
+            <div class="album__subtitle">
                 <p>Top-chart</p>
                 <div class="album__week">
                     <h6>week</h6>
                     <i class='bx bx-chevron-down'></i>
                 </div>
-                
-                
-                            </div>
+
+
+            </div>
             <div class="album__gallery">
-                <album-cover-list class="album-cover-list" id = "cover">
+                <album-cover-list class="album-cover-list" id="cover">
 
 
 
                 </album-cover-list>
-               
+
 
             </div>
 
 
         </section>
-        <section class= "album__mayLike">
-            <div class="album__mayLikeTitle" >
+        <section class="album__mayLike">
+            <div class="album__mayLikeTitle">
                 <h3>You may like</h3>
             </div>
-            
-            <div class= "album__mayLikeGallery">
-             
+
+            <div class="album__mayLikeGallery">
+
                 <album-may-cover class="album-may">
 
                 </album-may-cover>
-               
+
             </div>
 
-                   
 
-            
+
+
 
 
         </section>
-        
+
     </aside>
 
     <!-- SECTION CENTRAL IFRAME SPOTIFY -->
-    <main class= "column" id= "columna2">
+    <main class="column" id="columna2">
         <heading class="main__heading">
             <h3>Now playing</h3>
         </heading>
         <div class="frame__box">
-            <my-frame id= "main__frame" class= "main__frame"uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis"></my-frame>
+            <my-frame id="main__frame" class="main__frame" uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis"></my-frame>
 
 
         </div>
 
-       
+
 
         <!-- <div class= "album__mainSearch">
             <i class='bx bx-search-alt-2'></i>
@@ -98,31 +100,39 @@
         </div> -->
     </main>
 
-   <!-- SECTION DERECHA TRACK -->
+    <!-- SECTION DERECHA TRACK -->
     <section class="track column " id="columna3">
         <div class="track__heading">
             <h3>Track List</h3>
 
-            
+
         </div>
-    
-    <div class="track__playingNext"id = "album__mayLikeGallery">
-        <h5>Playing next</h5>
+
+        <div class="track__playingNext" id="album__mayLikeGallery">
+            <div class="album__search">
+                <i class='bx bx-search-alt-2'></i>
+                <input id="searchForm2" type="text" placeholder="Buscar...">
+                <button type="submit" id="buttonSearch2">Buscar</button>
 
 
-    </div>
- 
-        
+            </div>
+            <h5>Playing next</h5>
 
-         
 
-        <div class= "track__songs">
-            
+
+        </div>
+
+
+
+
+
+        <div class="track__songs">
+
             <album-tracks class="playNext" uri="spotify:album:2mX8ktJoWvyidWBU9U8Jis">
 
             </album-tracks>
 
-                  
+
 
         </div>
 
@@ -131,26 +141,27 @@
     <footer class="menu__mobile">
         <button onclick="mostrarColumna(1)">
             <i class='bx bx-home-alt'></i>
-           
+
         </button>
         <button onclick="mostrarColumna(2)">
-            <i class='bx bx-album' ></i>
+            <i class='bx bx-album'></i>
 
         </button>
         <button onclick="mostrarColumna(3)">
-            <i class='bx bx-menu' ></i>
+            <i class='bx bx-menu'></i>
 
         </button>
         <button id="colorButton">
-          <i class='bx bxs-palette'></i>
-    
-    
+            <i class='bx bxs-palette'></i>
+
+
         </button>
-        
+
     </footer>
-    
 
 
-    
+
+
 </body>
+
 </html>
