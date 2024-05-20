@@ -298,11 +298,11 @@ document.getElementById('colorButton').addEventListener('click', function() {
   };
 
   const newColors = {
-    color1: 'white',
-    color2: 'rgba(168, 168, 168, 0.753)',
-    color3: 'white',
-    color4: 'rgba(168, 168, 168, 0.753)',
-    color5: 'white'
+    color1: '#e9e9e9',
+    color2: 'white',
+    color3: 'black',
+    color4: '#e9e9e9',
+    color5: 'black'
   };
 
   const currentColors = {

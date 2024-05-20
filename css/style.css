@@ -88,6 +88,7 @@ body{
  
    background-color: var(--color2);
    padding-top: 2rem;
+   padding-bottom: 2rem;
    font-weight: bold;
    border-radius: 1rem;
    gap: 2rem;
@@ -460,7 +461,7 @@ transition: ease 0.3s;
     font-size: 0.9rem;
 }
 .playNextBox img{
-    width: 85px;
+    width: 65px;
     border-radius: 1rem;
 }
 
@@ -540,7 +541,7 @@ img:hover{
      gap: 0;
        padding-top: 2rem;
        border-radius: 1rem;
-     
+    
     }
     .album__songs img:hover{
         width: 145px;
@@ -576,16 +577,19 @@ img:hover{
         width: 120px;
         height: 120px;
       }
-    
+ 
+    .album-container img:hover{
+      width: 120px;
+      height: 120px;
+    }
 
     .album__subtitle{
         display: flex;
        flex-direction: row;
-      padding-left: 0rem;
-      padding-right:0rem;
+    
+   
        font-size:1.6rem;
-      
-      justify-content: space-between;
+     justify-content: space-between;
        /* width: 100%; */
     
     
@@ -597,7 +601,7 @@ img:hover{
     .album__week{
         display: flex;
         align-items: center;
-        gap: 1rem;
+       
     }
    /* SECTION DE YOU MAY LIKE THIS*/
               .albumMayContainer img{
@@ -724,10 +728,12 @@ img:hover{
         }
         .album__mainSearch Button{
             padding: 0.5rem  0.8rem;
+            background-color: var(--color3);
+
         }
       
         .album__mainSearch button:hover {
-            border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+            border: 1px solid var(--color3); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
         }
 
 
@@ -757,11 +763,12 @@ img:hover{
          
         }
         .track__search button {
+            background-color: var(--color3);
             padding: 0.5rem  0.8rem;
          
         }
         .track__search button:hover {
-            border: 1px solid var(--color5); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
+            border: 1px solid var(--color3); /* Cambia el borde al pasar el cursor *//* Cambia el color al pasar el cursor */
         }
         .track__songs{
 
