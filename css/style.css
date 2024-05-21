@@ -412,9 +412,15 @@ main{
     
    
 }
-.track__playingNext{
+.track__playingNext {
     padding-left: 2rem;
     font-size: 2rem;
+    color: var(--color5);
+
+}
+.playingNext{
+    padding-left: 2rem;
+    font-size: 1.2rem;
     color: var(--color5);
 
 }
